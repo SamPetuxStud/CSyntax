@@ -1,0 +1,55 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#include <time.h>
+#include <string.h>
+
+void str_copy(char* dest, char const* source) 
+{
+	while (*dest++ = *source++);
+}
+
+void str_concat(char* dest, char const* source)
+{
+	while (*dest++);
+	str_copy(dest-1, source);
+}
+
+int str_compare(char* str1, char* str2)
+{
+	while (*str1 && *str2)
+	{
+		if (*str1 > *str2)
+			return 1;
+		if (*str1 < *str2)
+			return -1;
+		str1++;
+		str2++;
+	}
+	if (*str1)
+		return 1;
+	if (*str2)
+		return -1;
+	return 0;
+}
+
+int const SIZE = 100;
+
+int main()
+{
+	char str1[SIZE] = { 0 };
+	fgets(str1, SIZE, stdin);
+	//trim(str1);
+	printf("%s\n", str1);
+	char dest[SIZE] = { 0 };
+
+	str_copy(dest, str1);
+	//strcpy(dest, str1);
+
+	str_concat(dest, str1);
+	//strcat(dest, ", world");
+
+	str_compare(str1, dest);
+	//strcmp(str1, dest);
+}
