@@ -5,23 +5,27 @@
 #include <time.h>
 #include <string.h>
 
+// Удаление символа переноса строки
 void trim(char* str) 
 {
 	while (*str && *str++ != '\n');
 	*--str = '\0';
 }
 
+// Копирование строки
 void str_copy(char* dest, char const* source) 
 {
 	while (*dest++ = *source++);
 }
 
+// Сложение строк
 void str_concat(char* dest, char const* source)
 {
 	while (*dest++);
 	str_copy(dest-1, source);
 }
 
+// Сравнение строк
 int str_compare(char* str1, char* str2)
 {
 	while (*str1 && *str2)
