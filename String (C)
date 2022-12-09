@@ -5,6 +5,12 @@
 #include <time.h>
 #include <string.h>
 
+void trim(char* str) 
+{
+	while (*str && *str++ != '\n');
+	*--str = '\0';
+}
+
 void str_copy(char* dest, char const* source) 
 {
 	while (*dest++ = *source++);
@@ -40,7 +46,7 @@ int main()
 {
 	char str1[SIZE] = { 0 };
 	fgets(str1, SIZE, stdin);
-	//trim(str1);
+	trim(str1);
 	printf("%s\n", str1);
 	char dest[SIZE] = { 0 };
 
